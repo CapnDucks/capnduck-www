@@ -3,7 +3,8 @@ provider "aws" {
 
   default_tags {
     tags = {
-      Name = local.setting["name"]
+      Name      = local.setting["name"]
+      terraform = "true"
     }
   }
 }
