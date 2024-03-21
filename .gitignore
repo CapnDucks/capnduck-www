@@ -34,5 +34,5 @@ override.tf.json
 terraform.rc
 
 # Custom
-.tf_
-.swp
+*.tf_
+*.swp
