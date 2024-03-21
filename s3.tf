@@ -63,3 +63,13 @@ resource "aws_s3_bucket_versioning" "www" {
     status = "Enabled"
   }
 }
+
+resource "aws_s3_object" "www" {
+  for_each = fileset("./html", "*")
+
+  bucket       = aws_s3_bucket.www.id
+  key          = each.value
+  source       = "./html/${each.value}"
+  etag         = filemd5("./html/${each.value}")
+  content_type = "text/html;charset=UTF8"
+}
