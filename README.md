@@ -1,1 +1,0 @@
-# Capnduck (dot) com
