@@ -3,8 +3,7 @@ data "aws_route53_zone" "this" {
 }
 
 data "aws_acm_certificate" "www" {
-  domain = local.setting["domain_name"]
+  domain   = local.setting["domain_name"]
   statuses = ["ISSUED"]
 }
 
-data "aws_caller_identity" "this" {}

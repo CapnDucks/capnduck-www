@@ -28,26 +28,10 @@ resource "aws_s3_bucket_public_access_block" "www" {
 
 }
 
-resource "aws_s3_bucket_policy" "www" {
-  bucket = aws_s3_bucket.www.id
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect    = "Allow"
-        Principal = "*"
-        Action = [
-          "s3:GetObject"
-        ]
-        Resource = [
-          aws_s3_bucket.www.arn,
-          "${aws_s3_bucket.www.arn}/*"
-        ]
-      }
-    ]
-  })
-}
+#import {
+#  to = aws_s3_bucket_policy.www
+#  id = "www-capnduck-com"
+#}
 
 resource "aws_s3_bucket_ownership_controls" "www" {
   bucket = aws_s3_bucket.www.id
