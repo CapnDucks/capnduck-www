@@ -39,7 +39,7 @@ resource "aws_cloudfront_distribution" "www" {
     max_ttl                = 30
   }
 
-  price_class = "PriceClass_200"
+  price_class = "PriceClass_100"
 
   restrictions {
     geo_restriction {
