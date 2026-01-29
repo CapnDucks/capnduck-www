@@ -37,6 +37,11 @@ resource "aws_cloudfront_distribution" "www" {
     min_ttl                = 0
     default_ttl            = 0
     max_ttl                = 30
+
+    function_association {
+      event_type   = "viewer-response"
+      function_arn = aws_cloudfront_function.index.arn
+    }
   }
 
   price_class = "PriceClass_100"
