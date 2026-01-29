@@ -58,3 +58,11 @@ resource "aws_cloudfront_distribution" "www" {
     ssl_support_method       = "sni-only"
   }
 }
+
+resource "aws_cloudfront_function" "index" {
+  name    = "index"
+  runtime = "cloudfront-js-2.0"
+  comment = "Make index.html the default for all subdirs."
+  publish = true
+  code    = file("${path.module}/cf_index_function.js")
+}
