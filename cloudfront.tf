@@ -39,7 +39,7 @@ resource "aws_cloudfront_distribution" "www" {
     max_ttl                = 30
 
     function_association {
-      event_type   = "viewer-response"
+      event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.index.arn
     }
   }
