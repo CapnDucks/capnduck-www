@@ -59,6 +59,12 @@ li {
   border-left: 4px solid #38bdf8;
   border-radius: 4px;
 }
+li.str.before {
+  content: "*";
+  position: absolute;
+  left: -15px;
+  bottom: -3px;
+}
 
 /* Footer */
 footer {
