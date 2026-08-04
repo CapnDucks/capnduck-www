@@ -20,17 +20,35 @@
   </section>
 
   <section>
-    <h2>Projects</h2>
+    <h2>Project - This site on AWS</h2>
     <ul>
       <li>
-        <strong>CI/CD Pipeline for Microservices</strong><br>
-        GitHub Actions, Docker, AWS FARGATE
+        GitHub Actions, Terraform, AWS, S3, HTML
       </li>
+      <li class="str">
+        * S3 bucket is not publicly accessible<br>
+        * Cloudfront is serving the static files<br>
+        * Index.html is the default document for all subdirectories with a Cloudfront Function<br>
+        * Using Cloudfront Origin Access Control for backend access</br>
+        * Redirects all http traffic to https<br>
+        * Route53 record --> Alias CNAME of Cloudfront distribution<br>
+        * ACM (TLS Cert for SSL traffic)<br>
+        - Certificate in US-EAST-1<br>
+          - DNS Validation in US-WEST-2 via ROUTE53 
+      </li>
+      <li>
+        <strong>Security Best Practices<br></strong>
+      <li class="str">
+        ✅ No public S3 bucket<br>
+        ✅ HTTPS enforced via CloudFront</br>
+        ✅ IAM role with least privilege</br>
+        ✅ Immutable builds (static files)</br>
+        ✅ CI/CD deploys, no manual console clicks</br>
     </ul>
   </section>
 
   <footer>
-    <p>GitHub | LinkedIn | Email</p>
+    <p><a href="https://www.github.com/jelliottio">GitHub</a> | <a href="https://www.linkedin.com/in/johnathan-elliott-9a950b5/">LinkedIn</a> | <a href="mailto:jobs (at) capnduck (dot) com">Email</a></p>
   </footer>
 </body>
 </html>
